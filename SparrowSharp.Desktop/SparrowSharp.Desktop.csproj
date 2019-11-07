@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>SparrowSharp.Desktop</AssemblyName>
     <RootNamespace>SparrowSharp.Desktop</RootNamespace>
   </PropertyGroup>
@@ -11,9 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenGL.Net" Version="0.7.1" />
-    <PackageReference Include="OpenGL.Net.CoreUI" Version="0.7.1" />
-    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0002" />
+    <PackageReference Include="OpenGL.Net" Version="0.8.4" />
+    <PackageReference Include="OpenGL.Net.CoreUI" Version="0.8.4" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0007" />
   </ItemGroup>
 
   <Import Project="..\SparrowShared\SparrowShared.projitems" Label="Shared" />

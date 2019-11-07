@@ -116,33 +116,17 @@
         </e>
       </e>
       <e p="SparrowSharp.Android" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Core" t="Include">
-          <e p="AndroidViewController.cs" t="Include" />
-        </e>
-        <e p="packages.config" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="ResourceLoading" t="Include">
-          <e p="AndroidTextureLoader.cs" t="Include" />
-        </e>
-        <e p="Resources" t="Include">
-          <e p="AboutResources.txt" t="Include" />
-          <e p="Resource.designer.cs" t="Include" />
-          <e p="values" t="Include">
-            <e p="Strings.xml" t="Include" />
-          </e>
-        </e>
         <e p="SparrowSharp.Droid.csproj" t="IncludeRecursive" />
       </e>
-      <e p="SparrowSharp.Core\SparrowSharp.Core.iOS.csproj" t="IncludeRecursive" />
+      <e p="SparrowSharp.Core" t="IncludeRecursive">
+        <e p="SparrowSharp.Core.iOS.csproj" t="IncludeRecursive" />
+      </e>
       <e p="SparrowSharp.Desktop" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DesktopViewController.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netcoreapp2.0" t="Include">
+            <e p="netcoreapp3.0" t="Include">
               <e p="SparrowSharp.Desktop.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -150,37 +134,13 @@
         <e p="SparrowSharp.Desktop.csproj" t="IncludeRecursive" />
       </e>
       <e p="SparrowSharp.Samples.Android" t="IncludeRecursive">
-        <e p="Assets" t="Include">
-          <e p="AboutAssets.txt" t="Include" />
-        </e>
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="environment.txt" t="Include" />
-        <e p="MainActivity.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AndroidManifest.xml" t="Include" />
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="Resources" t="Include">
-          <e p="AboutResources.txt" t="Include" />
-          <e p="drawable" t="Include">
-            <e p="Icon.png" t="Include" />
-          </e>
-          <e p="drawable-nodpi" t="Include" />
-          <e p="layout" t="Include">
-            <e p="Main.axml" t="Include" />
-          </e>
-          <e p="Resource.designer.cs" t="Include" />
-          <e p="values" t="Include">
-            <e p="Strings.xml" t="Include" />
-          </e>
-        </e>
         <e p="SparrowSharp.Samples.Droid.csproj" t="IncludeRecursive" />
       </e>
       <e p="SparrowSharp.Samples.Desktop" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netcoreapp2.0" t="Include">
+            <e p="netcoreapp3.0" t="Include">
               <e p="SparrowSharp.Samples.Desktop.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -189,22 +149,6 @@
         <e p="SparrowSharp.Samples.Desktop.csproj" t="IncludeRecursive" />
       </e>
       <e p="SparrowSharp.Samples.iOS" t="IncludeRecursive">
-        <e p="app.config" t="Include" />
-        <e p="AppDelegate.cs" t="Include" />
-        <e p="Benchmark.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Entitlements.plist" t="Include" />
-        <e p="Info.plist" t="Include" />
-        <e p="Main.cs" t="Include" />
-        <e p="OpenGLViewController.cs" t="Include" />
-        <e p="OpenGLViewController.xib" t="Include" />
-        <e p="Resources" t="Include">
-          <e p="atlas_1.png" t="Include" />
-          <e p="atlas_1.xml" t="Include" />
-          <e p="benchmark_object.png" t="Include" />
-          <e p="Default-568h@2x.png" t="Include" />
-          <e p="star.png" t="Include" />
-        </e>
         <e p="SparrowSharp.Samples.iOS.csproj" t="IncludeRecursive" />
       </e>
       <e p="SparrowSharp.Samples.Shared" t="IncludeRecursive">
@@ -221,39 +165,30 @@
         <e p="TrigonometryTest.cs" t="Include" />
       </e>
       <e p="UnitTests\Android" t="IncludeRecursive">
-        <e p="Assets" t="Include">
-          <e p="AboutAssets.txt" t="Include" />
-        </e>
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="MainActivity.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AndroidManifest.xml" t="Include" />
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="Resources" t="Include">
-          <e p="drawable" t="Include">
-            <e p="Icon.png" t="Include" />
-          </e>
-          <e p="Resource.designer.cs" t="Include" />
-        </e>
         <e p="UnitTests.Android.csproj" t="IncludeRecursive" />
       </e>
-      <e p="UnitTests\Shared" t="Include">
+      <e p="UnitTests.Shared" t="IncludeRecursive">
         <e p="DisplayObjectContainerTest.cs" t="Include" />
         <e p="DisplayObjectTest.cs" t="Include" />
         <e p="MatrixTest.cs" t="Include" />
         <e p="TestBase.cs" t="Include" />
+        <e p="UnitTests.Shared.projitems" t="Include" />
+        <e p="UnitTests.Shared.shproj" t="IncludeRecursive" />
         <e p="VertexDataTest.cs" t="Include" />
       </e>
-      <e p="UnitTests\Windows" t="IncludeRecursive">
+      <e p="UnitTests.Windows" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="display" t="Include">
           <e p="MeshTest.cs" t="Include" />
           <e p="QuadTest.cs" t="Include" />
         </e>
-        <e p="geom" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="packages.config" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="UnitTests.Windows.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="rendering" t="Include">
           <e p="IndexDataTest.cs" t="Include" />
           <e p="MeshStyleTest.cs" t="Include" />
@@ -267,7 +202,17 @@
         </e>
       </e>
     </e>
-    <e p="C:\Users\Matyas\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_sparrow-sharp.1659340064.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Matyas\.nuget\packages\microsoft.net.test.sdk\16.4.0\build\netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\Matyas\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\Matyas\.nuget\packages\microsoft.testplatform.testhost\16.4.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\Matyas\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\nunit.engine.api.dll" t="Include" />
+    <e p="C:\Users\Matyas\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\nunit.engine.dll" t="Include" />
+    <e p="C:\Users\Matyas\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\NUnit3.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\Matyas\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\NUnit3.TestAdapter.pdb" t="Include" />
+    <e p="C:\Users\Matyas\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Matyas\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_sparrow-sharp.1659340064.00" t="ExcludeRecursive" />
   </component>
   <component name="RiderRiderContentModelStore">
     <excludedPaths />

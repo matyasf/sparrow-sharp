@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Advanced;
+using SixLabors.ImageSharp.PixelFormats;
 using Sparrow.Textures;
 
 namespace Sparrow.ResourceLoading
@@ -27,9 +28,9 @@ namespace Sparrow.ResourceLoading
         public Texture LoadLocalImage(string pathToFile)
         {
             _isLoaded = false;
-            using (Image<Rgba32> image = Image.Load(pathToFile))
+            using (Image<Rgba32> image = Image.Load<Rgba32>(pathToFile))
             {
-                GenerateTexture(image.SavePixelData(), image.Width, image.Height);
+                GenerateTexture(image.GetPixelSpan().ToArray(), image.Width, image.Height);
             }
             return _glTexture;
         }
@@ -38,7 +39,7 @@ namespace Sparrow.ResourceLoading
         {
             _isLoaded = false;
             LoadLocalBitmapAsync(pathToFile);
-            // + check wether the async call can be executed instantly, 
+            // + check whether the async call can be executed instantly, 
             // because in that case it will be impossible to catch the event
             return this; 
         }
@@ -46,9 +47,9 @@ namespace Sparrow.ResourceLoading
         public Texture LoadFromStream(Stream stream)
         {
             _isLoaded = false;
-            using (Image<Rgba32> image = Image.Load(stream))
+            using (Image<Rgba32> image = Image.Load<Rgba32>(stream))
             {
-                GenerateTexture(image.SavePixelData(), image.Width, image.Height);
+                GenerateTexture(image.GetPixelSpan().ToArray(), image.Width, image.Height);
             }
             return _glTexture;
         }
@@ -58,27 +59,24 @@ namespace Sparrow.ResourceLoading
             throw new NotImplementedException();
         }
 
-        private void GenerateTexture(IList<byte> data, int width, int height)
+        private void GenerateTexture(Rgba32[] data, int width, int height)
         {
             _isLoaded = false;
             
             TextureOptions opts = new TextureOptions(TextureFormat.Rgba8888);
-            int len = width * height * 4;
-            
             // Premultiply alpha
-            for (int i = 0; i < len; i += 4)
+            byte[] pmaData = new byte[data.Length * 4];
+            for (int i = 0; i < data.Length; i++)
             {
-                float alpha = (float)data[i + 3] / 255;
-                byte r = data[i + 0];
-                byte g = data[i + 1];
-                byte b = data[i + 2];
-                data[i + 0] = (byte)(r * alpha);
-                data[i + 1] = (byte)(g * alpha);
-                data[i + 2] = (byte)(b * alpha);
-                data[i + 3] = (byte)(alpha * 255);
+                var aPixel = data[i];
+                float alpha = (float)aPixel.A / 255;
+                pmaData[4 * i + 0] = (byte)(aPixel.R * alpha);
+                pmaData[4 * i + 1] = (byte)(aPixel.G * alpha);
+                pmaData[4 * i + 2] = (byte)(aPixel.B * alpha);
+                pmaData[4 * i + 3] = (byte)(alpha * 255);
             }
             
-            _glTexture = Texture.FromData(data, opts, width, height);
+            _glTexture = Texture.FromData(pmaData, opts, width, height);
 
             _isLoaded = true;
             // Make a temporary copy of the event to avoid possibility of 

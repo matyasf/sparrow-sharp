@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using Sparrow.Geom;
-using Sparrow.Utils;
 using Sparrow.Rendering;
 using System;
 using Sparrow.Display;

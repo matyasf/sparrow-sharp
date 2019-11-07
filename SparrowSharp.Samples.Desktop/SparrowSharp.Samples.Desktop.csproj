@@ -1,15 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>SparrowSamples</AssemblyName>
     <RootNamespace>SparrowSamples</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenGL.Net" Version="0.7.1" />
-    <PackageReference Include="OpenGL.Net.CoreUI" Version="0.7.1" />
+    <PackageReference Include="OpenGL.Net" Version="0.8.4" />
+    <PackageReference Include="OpenGL.Net.CoreUI" Version="0.8.4" />
   </ItemGroup>
 
   <ItemGroup>
