@@ -1,3 +1,4 @@
+.idea/**/workspace.xml
 bin/
 obj/
 packages/
@@ -5,7 +6,6 @@ packages/
 *.suo
 .vs/
 *.bak
-workspace.xml
 
 # OS generated files #
 ######################
