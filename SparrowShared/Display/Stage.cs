@@ -12,11 +12,11 @@ namespace Sparrow.Display
     /// Sparrow will create the stage for you. You can access 'Stage' from anywhere with SparrowSharp.Stage.
     /// </para>
     /// <para>
-    /// The Stage's 'StageWidth' and 'StageHeight' values define the coordinate system of your game. The color
-    /// of the stage defines the background color of your game.
+    /// The Stage's 'StageWidth' and 'StageHeight' values define the coordinate system of your app. The color
+    /// of the stage defines the background color of your app.
     /// </para>
     /// <para>
-    /// The Stage's Width and Height properties return the enclosing bounds of your game. This can be bigger than
+    /// The Stage's Width and Height properties return the enclosing bounds of your app. This can be bigger than
     /// StageWidth/StageHeight if you place objects outside the Stage coordinates.
     /// </para>
     /// </summary>
@@ -43,7 +43,7 @@ namespace Sparrow.Display
         /// close to PI results in a fisheye lens effect. If the field of view is set to 0 or PI,
         /// nothing is seen on the screen.</para>
         ///
-        /// @default 1.0
+        /// Default 1.0
         /// </summary>
         public float FieldOfView { get; set; }
         private readonly Point _projectionOffset;
@@ -59,7 +59,6 @@ namespace Sparrow.Display
             Color = 0xFFFFFF;
             FieldOfView = 1.0f;
             _projectionOffset = Point.Create();
-           
         }
 
         public override DisplayObject HitTest(Point localPoint)
@@ -125,7 +124,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float Width
         {
-            set { throw new InvalidOperationException("cannot set width of stage. Use StageWidth instead."); }
+            set => throw new InvalidOperationException("cannot set width of stage. Use StageWidth instead.");
         }
 
         /// <summary>
@@ -133,7 +132,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float Height
         {
-            set { throw new InvalidOperationException("cannot set height of stage. Use StageHeight instead."); }
+            set => throw new InvalidOperationException("cannot set height of stage. Use StageHeight instead.");
         }
 
         /// <summary>
@@ -141,7 +140,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float X
         {
-            set { throw new InvalidOperationException("cannot set x-coordinate of stage"); }
+            set => throw new InvalidOperationException("cannot set x-coordinate of stage");
         }
 
         /// <summary>
@@ -149,7 +148,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float Y
         {
-            set { throw new InvalidOperationException("cannot set y-coordinate of stage"); }
+            set => throw new InvalidOperationException("cannot set y-coordinate of stage");
         }
 
         /// <summary>
@@ -157,7 +156,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float ScaleX
         {
-            set { throw new InvalidOperationException("cannot scale stage"); }
+            set => throw new InvalidOperationException("cannot scale stage");
         }
 
         /// <summary>
@@ -165,7 +164,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float ScaleY
         {
-            set { throw new InvalidOperationException("cannot scale stage"); }
+            set => throw new InvalidOperationException("cannot scale stage");
         }
 
         /// <summary>
@@ -173,7 +172,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float Rotation
         {
-            set { throw new InvalidOperationException("cannot set rotation of stage"); }
+            set => throw new InvalidOperationException("cannot set rotation of stage");
         }
 
         /// <summary>
@@ -181,7 +180,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float SkewX
         {
-            set { throw new InvalidOperationException("cannot skew stage"); }
+            set => throw new InvalidOperationException("cannot skew stage");
         }
 
         /// <summary>
@@ -189,7 +188,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float SkewY
         {
-            set { throw new InvalidOperationException("cannot skew stage"); }
+            set => throw new InvalidOperationException("cannot skew stage");
         }
 
         public override FragmentFilter Filter
@@ -202,7 +201,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float PivotX
         {
-            set { throw new InvalidOperationException("cannot set PivotX of stage"); }
+            set => throw new InvalidOperationException("cannot set PivotX of stage");
         }
 
         /// <summary>
@@ -210,7 +209,7 @@ namespace Sparrow.Display
         /// </summary>
         public override float PivotY
         {
-            set { throw new InvalidOperationException("cannot set PivotY of stage"); }
+            set => throw new InvalidOperationException("cannot set PivotY of stage");
         }
 
         /// <summary>
@@ -219,8 +218,8 @@ namespace Sparrow.Display
         /// in this case 1 unit in the Stage equals 1 pixel.
         /// </summary>
         public float StageWidth {
-            get { return _width; }
-            set { _width = value; }
+            get => _width;
+            set => _width = value;
         }
 
         /// <summary>
@@ -229,8 +228,8 @@ namespace Sparrow.Display
         /// in this case 1 unit in the Stage equals 1 pixel.
         /// </summary>
         public float StageHeight {
-            get { return _height; }
-            set { _height = value; }
+            get => _height;
+            set => _height = value;
         }
 
         /// <summary>
@@ -239,8 +238,8 @@ namespace Sparrow.Display
         /// </summary>
         public float FocalLength
         {
-            get { return StageWidth / (2f * (float)Math.Tan(FieldOfView / 2f)); }
-            set { FieldOfView = 2 * (float)Math.Atan(StageWidth / (2f * value)); }
+            get => StageWidth / (2f * (float)Math.Tan(FieldOfView / 2f));
+            set => FieldOfView = 2 * (float)Math.Atan(StageWidth / (2f * value));
         }
 
         /// <summary>
@@ -249,8 +248,8 @@ namespace Sparrow.Display
         /// point for 3D display objects. <para>CAUTION: not a copy, but the actual object!</para>
         /// </summary>
         public Point ProjectionOffset {
-            get { return _projectionOffset; }
-            set { _projectionOffset.SetTo(value.X, value.Y); }
+            get => _projectionOffset;
+            set => _projectionOffset.SetTo(value.X, value.Y);
         }
 
         /// <summary>
@@ -261,9 +260,6 @@ namespace Sparrow.Display
         ///
         /// <para>CAUTION: not a copy, but the actual object!</para>
         /// </summary>
-        public float[] CameraPosition
-        {
-            get { return GetCameraPosition(); }
-        }
+        public float[] CameraPosition => GetCameraPosition();
     }
 }

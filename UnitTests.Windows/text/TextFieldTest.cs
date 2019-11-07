@@ -15,7 +15,7 @@ namespace Tests
         public void TestTextField()
         {
             SparrowSharp.ViewPort = Rectangle.Create(10, 10, 10, 10);
-            // TODO SparrowSharp needs Stage!
+            // TODO SparrowSharp needs a mock Stage!
             TextField.DefaultCompositor = new MockCompositor();
             TextField.DefaultCompositor = new MockCompositor();
             TextField textField = new TextField(240, 50, "test text");

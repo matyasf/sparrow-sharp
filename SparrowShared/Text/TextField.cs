@@ -259,10 +259,7 @@ namespace Sparrow.Text
                     SetRequiresRecomposition();
                 }
             }
-            get
-            {
-                return _text;
-            }
+            get => _text;
         }
 
         /** The format describes how the text will be rendered, describing the font name and size,

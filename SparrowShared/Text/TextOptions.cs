@@ -9,25 +9,41 @@ namespace Sparrow.Text
     {
         // + add here HTML text support
 
-        /** Indicates if the text should be wrapped at word boundaries if it does not fit into
-        *  the TextField otherwise. @default true */
+        /// <summary>
+        /// Indicates if the text should be wrapped at word boundaries if it does not fit into
+        /// the TextField otherwise. Default is <code>true</code>
+        /// </summary>
         public bool WordWrap { get; set; }
-        /** Indicates whether the font size is automatically reduced if the complete text does
-         *  not fit into the TextField. @default false */
+        
+        /// <summary>
+        /// Indicates whether the font size is automatically reduced if the complete text does
+        /// not fit into the TextField. efault is <code>false</code>
+        /// </summary>
         public bool AutoScale { get; set; }
-        /** Specifies the type of auto-sizing set on the TextField.Custom text compositors may
-         *  take this into account, though the basic implementation (done by the TextField itself)
-         *  is often sufficient: it passes a very big size to the <code>fillMeshBatch</code>
-         *  method and then trims the result to the actually used area. @default none */
+        
+        /// <summary>
+        /// Specifies the type of auto-sizing set on the TextField.Custom text compositors may
+        /// take this into account, though the basic implementation (done by the TextField itself)
+        /// is often sufficient: it passes a very big size to the <code>fillMeshBatch</code>
+        /// method and then trims the result to the actually used area. Default is TextFieldAutoSize.NONE
+        /// </summary>
         public TextFieldAutoSize AutoSize { get; set; }
-        /** The scale factor of any textures that are created during text composition.
-         *  @default Starling.contentScaleFactor */
+        
+        /// <summary>
+        /// The scale factor of any textures that are created during text composition.
+        /// Default is SparrowSharp.ContentScaleFactor
+        /// </summary>
         public float TextureScale { get; set; }
-        /** The Context3DTextureFormat of any textures that are created during text composition.
-         *  @default Context3DTextureFormat.BGRA_PACKED */
+        
+        /// <summary>
+        /// The Context3DTextureFormat of any textures that are created during text composition.
+        /// Default is TextureFormat.Rgb565
+        /// </summary>
         public TextureFormat TextureFormat { get; set; }
 
-        /** Creates a new TextOptions instance with the given properties. */
+        /// <summary>
+        /// Creates a new TextOptions instance with the given properties.
+        /// </summary>
         public TextOptions(bool wordWrap = true, bool autoScale = false)
         {
             WordWrap = wordWrap;
@@ -37,7 +53,9 @@ namespace Sparrow.Text
             TextureFormat = TextureFormat.Rgb565; // likely wrong
         }
 
-        /** Copies all properties from another TextOptions instance. */
+        /// <summary>
+        /// Copies all properties from another TextOptions instance.
+        /// </summary>
         public void CopyFrom(TextOptions options)
         {
             WordWrap = options.WordWrap;
@@ -47,7 +65,9 @@ namespace Sparrow.Text
             TextureFormat = options.TextureFormat;
         }
 
-        /** Creates a clone of this instance. */
+        /// <summary>
+        /// Creates a clone of this instance.
+        /// </summary>
         public TextOptions Clone()
         {
             var clone = new TextOptions();

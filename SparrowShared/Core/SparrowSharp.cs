@@ -272,10 +272,7 @@ namespace Sparrow.Core
         /// The ratio between viewPort width and stage width. Useful for choosing a different
         /// set of textures depending on the display resolution.
         /// </summary>
-        public static float ContentScaleFactor
-        {
-            get { return _viewPort.Width / Stage.StageWidth; }
-        }
+        public static float ContentScaleFactor => _viewPort.Width / Stage.StageWidth;
 
         /// <summary>
         /// Indicates if OpenGL render methods will report errors. Activate only when needed,
