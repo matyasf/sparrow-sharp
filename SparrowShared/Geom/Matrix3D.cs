@@ -214,10 +214,7 @@ namespace Sparrow.Geom
         ///  12,13,14,15]
         ///  WARNING: Not a copy
         /// </summary>
-        public float[] RawData
-        {
-            get { return rawData; }
-        }
+        public float[] RawData => rawData;
 
         public void CopyRawDataFrom(float[] arr, bool clone = true)
         {
@@ -260,6 +257,13 @@ namespace Sparrow.Geom
             rawData[5] = -rawData[5];
             rawData[13] = -rawData[13];
         }
-
+        
+        public override string ToString()
+        {
+            return $"{rawData[0]} {rawData[1]} {rawData[2]} {rawData[3]}\n" +
+                   $"{rawData[4]} {rawData[5]} {rawData[6]} {rawData[7]}\n" +
+                   $"{rawData[8]} {rawData[9]} {rawData[10]} {rawData[11]}\n" +
+                   $"{rawData[12]} {rawData[13]} {rawData[14]} {rawData[15]}";
+        }
     }
 }

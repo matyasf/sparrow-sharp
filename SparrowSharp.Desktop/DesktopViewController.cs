@@ -20,16 +20,14 @@ namespace Sparrow.Core
             _height = windowHeight;
             _rootClass = rootClass;
             _touchProcessor = new TouchProcessor();
-            using (NativeWindow nativeWindow = NativeWindow.Create())
-            {
-                _nativeWindow = nativeWindow;
-                nativeWindow.ContextCreated += NativeWindow_ContextCreated;
-                nativeWindow.ContextProfile = NativeWindow.ProfileType.Core;
-                nativeWindow.DebugContext = NativeWindow.AttributePermission.Enabled;
-                nativeWindow.Create(0, 0, windowWidth, windowHeight, NativeWindowStyle.Caption);
-                nativeWindow.Show();
-                nativeWindow.Run();
-            }
+            using NativeWindow nativeWindow = NativeWindow.Create();
+            _nativeWindow = nativeWindow;
+            nativeWindow.ContextCreated += NativeWindow_ContextCreated;
+            nativeWindow.ContextProfile = NativeWindow.ProfileType.Core;
+            nativeWindow.DebugContext = NativeWindow.AttributePermission.Enabled;
+            nativeWindow.Create(0, 0, windowWidth, windowHeight, NativeWindowStyle.Resizeable);
+            nativeWindow.Show();
+            nativeWindow.Run();
         }
 
         private void NativeWindow_ContextCreated(object sender, NativeWindowEventArgs e)
@@ -59,7 +57,7 @@ namespace Sparrow.Core
         private void Control_Render(object sender, NativeWindowEventArgs e)
         {
             long now = DateTime.Now.Ticks;
-            long inv60FPS = 10000000 / 60;
+            const long inv60FPS = 10000000 / 60;
             if (now - lastRenderTime > inv60FPS)
             {
                 lastRenderTime = now;

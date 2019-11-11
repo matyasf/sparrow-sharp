@@ -168,20 +168,32 @@
         <e p="UnitTests.Android.csproj" t="IncludeRecursive" />
       </e>
       <e p="UnitTests.Shared" t="IncludeRecursive">
-        <e p="DisplayObjectContainerTest.cs" t="Include" />
-        <e p="DisplayObjectTest.cs" t="Include" />
-        <e p="MatrixTest.cs" t="Include" />
-        <e p="TestBase.cs" t="Include" />
-        <e p="UnitTests.Shared.projitems" t="Include" />
-        <e p="UnitTests.Shared.shproj" t="IncludeRecursive" />
-        <e p="VertexDataTest.cs" t="Include" />
-      </e>
-      <e p="UnitTests.Windows" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
         <e p="display" t="Include">
+          <e p="DisplayObjectContainerTest.cs" t="Include" />
+          <e p="DisplayObjectTest.cs" t="Include" />
           <e p="MeshTest.cs" t="Include" />
           <e p="QuadTest.cs" t="Include" />
         </e>
+        <e p="geom" t="Include">
+          <e p="MatrixTest.cs" t="Include" />
+        </e>
+        <e p="rendering" t="Include">
+          <e p="IndexDataTest.cs" t="Include" />
+          <e p="VertexDataTest.cs" t="Include" />
+        </e>
+        <e p="Styles" t="Include">
+          <e p="MeshStyleTest.cs" t="Include" />
+        </e>
+        <e p="TestBase.cs" t="Include" />
+        <e p="text" t="Include">
+          <e p="MockTexture.cs" t="Include" />
+          <e p="TextFieldTest.cs" t="Include" />
+        </e>
+        <e p="UnitTests.Shared.projitems" t="Include" />
+        <e p="UnitTests.Shared.shproj" t="IncludeRecursive" />
+      </e>
+      <e p="UnitTests.Windows" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
@@ -189,17 +201,7 @@
             </e>
           </e>
         </e>
-        <e p="rendering" t="Include">
-          <e p="IndexDataTest.cs" t="Include" />
-          <e p="MeshStyleTest.cs" t="Include" />
-        </e>
-        <e p="text" t="Include">
-          <e p="TextFieldTest.cs" t="Include" />
-        </e>
         <e p="UnitTests.Windows.csproj" t="IncludeRecursive" />
-        <e p="utils" t="Include">
-          <e p="MockTexture.cs" t="Include" />
-        </e>
       </e>
     </e>
     <e p="C:\Users\Matyas\.nuget\packages\microsoft.net.test.sdk\16.4.0\build\netcoreapp2.1" t="Include">

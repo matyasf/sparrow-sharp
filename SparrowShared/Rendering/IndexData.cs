@@ -452,8 +452,6 @@ namespace Sparrow.Rendering
         public uint CreateIndexBuffer(bool upload, BufferUsage bufferUsage)
         {
             if (_numIndices == 0) return 0;
-
-            //IndexBuffer3D buffer = context.createIndexBuffer(_numIndices, bufferUsage);
             uint buffer = Gl.GenBuffer();
             Gl.BindBuffer(BufferTarget.ArrayBuffer, buffer);
             if (upload) UploadToIndexBuffer(buffer, bufferUsage);
@@ -473,7 +471,6 @@ namespace Sparrow.Rendering
             {
                 Gl.BindBuffer(BufferTarget.ElementArrayBuffer, buffer);
                 Gl.BufferData(BufferTarget.ElementArrayBuffer, (uint)(sizeof(short) * numIndices), RawData, hint);
-                
             }
         }
 
@@ -574,7 +571,7 @@ namespace Sparrow.Rendering
             get
             {
                 if (_useQuadLayout) return _sQuadData;
-                else return _rawData;
+                return _rawData;
             }
         }
 

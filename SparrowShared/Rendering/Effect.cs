@@ -283,7 +283,7 @@ namespace Sparrow.Rendering
             Gl.VertexAttribPointer(attribPosition, 2, VertexAttribType.Float, false, Vertex.Size, (IntPtr)Vertex.PositionOffset);
             
             int uMvpMatrix = Program.Uniforms["uMvpMatrix"];
-            Gl.UniformMatrix4(uMvpMatrix, false, MvpMatrix3D.RawData); // 1 is the number of matrices
+            Gl.UniformMatrix4(uMvpMatrix, false, MvpMatrix3D.RawData);
             
             if (Texture != null)
             {

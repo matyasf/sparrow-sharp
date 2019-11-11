@@ -62,7 +62,7 @@ namespace Sparrow.Core
         public static bool IsRunningOpenGLES { get; private set; }
 
         /// <summary>
-        /// Start your game.
+        /// Start your app.
         /// </summary>
         /// <param name="width">Stage width</param>
         /// <param name="height">Stage height</param>
@@ -147,7 +147,6 @@ namespace Sparrow.Core
             }
             long elapsed = Watch.ElapsedMilliseconds;
             Watch.Restart();
-
             Stage.AdvanceTime(elapsed);
             DefaultJuggler.AdvanceTime(elapsed / 1000.0f);
             bool doRedraw = Stage.RequiresRedraw || !SkipUnchangedFrames || _frameId == 1;

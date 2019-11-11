@@ -533,7 +533,7 @@ namespace Sparrow.Rendering
 
         /// <summary>
         /// Changes the way alpha and color values are stored.
-        /// Optionally, all exisiting vertices are updated.
+        /// Optionally, all existing vertices are updated.
         /// </summary>
         public void SetPremultipliedAlpha(bool value, bool updateVertices)
         {
